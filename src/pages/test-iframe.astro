@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="TP2 — Iframe">
+  <h1 class="text-3xl font-bold mb-4">Version IFRAME</h1>
+
+  <nav class="mb-4 flex gap-3 text-sm">
+    <a href="/species/Adelie"  target="viewer" class="px-3 py-1 rounded border">Adelie</a>
+    <a href="/species/Gentoo"  target="viewer" class="px-3 py-1 rounded border">Gentoo</a>
+    <a href="/species/Chinstrap" target="viewer" class="px-3 py-1 rounded border">Chinstrap</a>
+  </nav>
+
+  <iframe
+    name="viewer"
+    src="/species/Adelie"
+    class="w-full rounded border"
+    onload="this.style.height = (this.contentWindow?.document?.body?.scrollHeight || 900) + 'px';"
+  ></iframe>
+</Layout>
